@@ -1,26 +1,12 @@
 import kivy
 import kivymd
-# try:
-#     import androidhelper as android
-# except:
-#     import android
-# import pywhatkit
-import qpython
 from permissions import request_permissions, Permission
 import androidhelper_r6 as android
 from kivymd.app import MDApp
 from kivy.lang import Builder
-from kivymd.uix.datatables import MDDataTable
-from kivy.metrics import dp
-from kivy.core.window import Window
 from kivy.uix.screenmanager import Screen, ScreenManager
-from kivymd.uix.button import MDFillRoundFlatButton, MDRectangleFlatButton
 from kivymd.uix.list import OneLineListItem, IconLeftWidget, ThreeLineListItem, MDList
-from kivy.uix.scrollview import ScrollView
 from kivy.clock import Clock
-from kivymd.uix.dialog import MDDialog
-from kivy.utils import platform
-import time
 
 screen_helper = """
 ScreenManager:
@@ -116,15 +102,5 @@ class DemoApplicationApp(MDApp):
     def send_message(self):
         droid = android.Android()
         droid.smsSend("420xxxxxxxxx", "Message")
-
-    def navigation_draw(self):
-        print("Hello World")
-
-    def settings(self):
-        print("Settings")
-
-    def PlusScreen(self):
-        print("Hello")
-
 
 DemoApplicationApp().run()
